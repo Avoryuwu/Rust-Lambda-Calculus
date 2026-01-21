@@ -1,4 +1,4 @@
 [package]
-name = "easy-lambda-calculus"
+name = "easy_lambda_calculus"
 version = "1.0.0"
 edition = "2024"
