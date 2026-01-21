@@ -1,7 +1,6 @@
 use dyn_fmt::AsStrFormatExt;
 use std::collections::HashMap;
 use std::fmt;
-use unicode_segmentation::UnicodeSegmentation;
 
 //Lambda data type
 #[derive(Debug, PartialEq, Clone)]
@@ -22,11 +21,12 @@ impl Lambda {
     const ALPH: &str = "xyzwabcdefghijklmnopqrstuv";
     //new lambda from string
     pub fn new(s: &str) -> Lambda {
-        let mut chars: Vec<String> = Vec::new();
-        let graphemes = UnicodeSegmentation::graphemes(s, true);
-        for g in graphemes {
-            chars.push(g.to_string())
-        }
+        let chars = s
+            .chars()
+            .collect::<Vec<char>>()
+            .iter()
+            .map(|x| x.to_string())
+            .collect::<Vec<String>>();
         let bracks = Self::find_bracks(chars.clone(), false);
         let tokens = Self::parse_bracks(bracks.clone());
         Self::parse_tokens(tokens)
@@ -368,7 +368,7 @@ impl Lambda {
     //function to get a lambda variable name from an integer
     fn get_name(mut n: usize) -> String {
         let mut out = "".to_string();
-        let chars = UnicodeSegmentation::graphemes(Self::ALPH, true);
+        let chars = Self::ALPH.chars();
         let num = chars.clone().count();
         n += 1;
         while n != 0 {
