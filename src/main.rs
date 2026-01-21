@@ -450,7 +450,7 @@ impl Lambda {
                 if s2.is_empty() {
                     s2 = Self::display(*d)
                 }
-                format!("(%{}.{})", &s1, &s2)
+                format!("(λ{}.{})", &s1, &s2)
             }
             Self::Reducible((a, b)) => {
                 let s1 = Self::display(*a);

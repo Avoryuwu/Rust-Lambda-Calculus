@@ -1,8 +1,4 @@
 [package]
-name = "lambda"
-version = "0.1.0"
+name = "easy-lambda-calculus"
+version = "1.0.0"
 edition = "2024"
-
-[dependencies]
-dyn-fmt = "0.4.3"
-unicode-segmentation = "1.12.0"
