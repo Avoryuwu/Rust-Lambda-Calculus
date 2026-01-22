@@ -1,14 +1,9 @@
 [package]
 name = "easy_lambda_calculus"
-version = "1.0.0"
+version = "1.0.1"
 repository = "https://github.com/Avoryuwu/Easy-Lambda-Calculus"
 description = "Simple and easy to write lambda calculus"
 license = "MIT"
 readme = "README.md"
 authors = ["Avoryuwu <avory545@gmail.com>"]
 edition = "2024"
-
-[lib]
-path = "src/main.rs"
-
-[dependency]
