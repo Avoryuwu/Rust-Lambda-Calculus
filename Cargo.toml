@@ -1,9 +1,10 @@
 [package]
 name = "easy_lambda_calculus"
 version = "1.0.0"
-repository = "https://github.com/Avoryuwu/Rust-Lambda-Calculus"
-description = "Quick and easy to write lambda calculus"
+repository = "https://github.com/Avoryuwu/Easy-Lambda-Calculus"
+description = "Simple and easy to write lambda calculus"
 license = "MIT"
+readme = "README.md"
 authors = ["Avoryuwu <avory545@gmail.com>"]
 edition = "2024"
 
