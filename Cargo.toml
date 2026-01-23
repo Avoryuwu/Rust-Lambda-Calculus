@@ -1,6 +1,6 @@
 [package]
 name = "easy_lambda_calculus"
-version = "1.0.2"
+version = "1.0.3"
 repository = "https://github.com/Avoryuwu/Easy-Lambda-Calculus"
 description = "Simple and easy to write lambda calculus"
 license = "MIT"
