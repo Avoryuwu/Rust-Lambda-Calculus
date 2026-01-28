@@ -15,6 +15,7 @@
 
 use std::collections::HashMap;
 use std::fmt;
+use std::mem;
 
 ///Makes a new lambda from a string
 ///
@@ -237,7 +238,7 @@ impl Lambda {
     fn find_vars(strs: &[String], mut token_vec: Vec<Lambda>, i: usize) -> (Vec<Lambda>, i32) {
         let mut pass_num = 0;
         if !Self::ALPH.contains(&strs[i]) {
-            panic!("Syntax error");
+            panic!("Syntax error {}", &strs[i]);
         }
         let mut var: String = "".to_string();
         for k in i..strs.len() {
@@ -563,7 +564,7 @@ impl Lambda {
                 if s2.is_empty() {
                     s2 = Self::display(*d)
                 }
-                format!("(λ{}.{})", &s1, &s2)
+                format!("(%{}.{})", &s1, &s2)
             }
             Self::Reducible((a, b)) => {
                 let s1 = Self::display(*a);
@@ -576,6 +577,14 @@ impl Lambda {
             }
             _ => panic!("Cannot display"),
         }
+    }
+    pub fn from_i32(n: i32) -> Lambda {
+        let mut l = Self::var("x").attach(Self::var("y"));
+        for i in 0..n {
+            l = Self::var("x").attach(l);
+            println!("{}", i);
+        }
+        l
     }
 }
 
